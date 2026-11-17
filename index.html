@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ONEBODY — 캠퍼스 커뮤니티</title>
+  <!-- Pretendard Variable Font -->
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
   <style>
     :root {
       --bg-paper: #F7F6F2;
       --bg-card: #FFFFFF;
-      --bg-card-sub: #EFEDE6;
       --text-main: #1C1917;
       --text-sub: #57534E;
       --text-muted: #78716C;
@@ -48,7 +48,7 @@
       padding: 0 24px;
     }
 
-    /* Header */
+    /* 상단 고정 헤더 */
     header {
       position: sticky;
       top: 0;
@@ -114,9 +114,9 @@
       opacity: 0.85;
     }
 
-    /* Section Common */
+    /* 대영역 공통 (각 섹션 맨 마지막에만 가로 구분선 배치) */
     section {
-      padding: 80px 0;
+      padding: 88px 0;
       border-bottom: 1px solid var(--border-line);
     }
 
@@ -139,9 +139,9 @@
       display: inline-block;
     }
 
-    /* Hero Section */
+    /* 01. 히어로 섹션 */
     .hero {
-      padding: 96px 0 88px;
+      padding: 100px 0 92px;
     }
 
     .hero h1 {
@@ -161,15 +161,14 @@
     }
 
     .hero p {
-      max-width: 680px;
       font-size: 17px;
       color: var(--text-sub);
-      line-height: 1.75;
+      line-height: 1.8;
     }
 
-    /* Section Header */
+    /* 섹션 타이틀 */
     .section-title-wrap {
-      margin-bottom: 48px;
+      margin-bottom: 56px;
     }
 
     .section-title-wrap h2 {
@@ -178,23 +177,23 @@
       letter-spacing: -0.02em;
     }
 
-    /* 3-Column Ministry Grid */
-    .ministry-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-      align-items: start;
-    }
-
-    .ministry-col {
+    /* 02. 캠퍼스 사역 풀와이드 3단 스택 구조 */
+    .ministry-stack {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 88px;
+    }
+
+    .ministry-block {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      width: 100%;
     }
 
     .img-box {
       width: 100%;
-      aspect-ratio: 16 / 10;
+      aspect-ratio: 16 / 9;
       background-color: #E7E5E4;
       border: 1px solid var(--border-line);
       overflow: hidden;
@@ -209,71 +208,77 @@
       filter: grayscale(100%) contrast(1.04);
     }
 
-    .ministry-main-text {
-      padding-top: 4px;
+    .ministry-content {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      width: 100%;
     }
 
     .num-badge {
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 800;
       color: var(--text-muted);
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
       display: block;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
     .ministry-main-text h3 {
-      font-size: 22px;
+      font-size: clamp(24px, 3vw, 30px);
       font-weight: 800;
       letter-spacing: -0.02em;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .ministry-main-text p {
-      font-size: 15px;
+      font-size: 16.5px;
       color: var(--text-sub);
-      line-height: 1.7;
+      line-height: 1.8;
     }
 
-    /* Sub-cards inside each ministry */
+    /* 하위 모임 풀와이드 카드 */
     .sub-cards {
       display: flex;
       flex-direction: column;
-      gap: 14px;
-      margin-top: 4px;
+      gap: 16px;
+      width: 100%;
     }
 
     .sub-card {
+      width: 100%;
       background-color: var(--bg-card);
       border: 1px solid var(--border-light);
-      padding: 20px 22px;
+      padding: 28px 32px;
     }
 
     .sub-card h4 {
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 700;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       color: var(--text-main);
     }
 
     .sub-card p {
-      font-size: 14px;
+      font-size: 15.5px;
       color: var(--text-sub);
-      line-height: 1.65;
+      line-height: 1.75;
     }
 
     .sub-card p + p {
-      margin-top: 10px;
+      margin-top: 12px;
     }
 
-    /* Together Section (2 Full-Width Stacked Boxes) */
+    /* 03. 우리가 함께 하는 것 (풀와이드 상하 2개 박스) */
     .together-stack {
       display: flex;
       flex-direction: column;
       gap: 24px;
+      width: 100%;
     }
 
     .together-box {
+      width: 100%;
       background-color: var(--bg-card);
       border: 1px solid var(--border-line);
       padding: 36px 40px;
@@ -296,8 +301,9 @@
       margin-top: 12px;
     }
 
-    /* Support Section */
+    /* 04. 후원 안내 */
     .support-box {
+      width: 100%;
       background-color: var(--bg-card);
       border: 1px solid var(--text-main);
       padding: 48px;
@@ -358,7 +364,7 @@
       opacity: 0.9;
     }
 
-    /* Footer */
+    /* 푸터 */
     footer {
       background-color: #1C1917;
       color: #A8A29E;
@@ -379,17 +385,16 @@
       letter-spacing: 0.04em;
     }
 
-    /* Responsive */
+    /* 반응형 */
     @media (max-width: 900px) {
-      .ministry-grid {
-        grid-template-columns: 1fr;
-        gap: 48px;
+      .ministry-stack {
+        gap: 64px;
       }
       .nav-links {
         display: none;
       }
-      .together-box, .support-box {
-        padding: 28px 24px;
+      .sub-card, .together-box, .support-box {
+        padding: 24px 20px;
       }
     }
   </style>
@@ -436,7 +441,7 @@
       </div>
     </section>
 
-    <!-- 02. Campus Ministry (3 Columns) -->
+    <!-- 02. Campus Ministry (상단 대형 이미지 + 하단 풀와이드 본문 & 하위 카드) -->
     <section id="ministry">
       <div class="container">
         <div class="section-title-wrap">
@@ -447,91 +452,97 @@
           <h2>캠퍼스 사역의 세 가지 축</h2>
         </div>
 
-        <div class="ministry-grid">
+        <div class="ministry-stack">
 
           <!-- Axis 01 -->
-          <div class="ministry-col">
+          <div class="ministry-block">
             <div class="img-box">
               <img src="./campus1.jpg" alt="캠퍼스 복음화 현장"
-                onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 500%22><rect width=%22800%22 height=%22500%22 fill=%22%23e7e5e4%22/><text x=%22400%22 y=%22245%22 font-family=%22sans-serif%22 font-size=%2220%22 font-weight=%22bold%22 fill=%22%2357534e%22 text-anchor=%22middle%22>01. CAMPUS EVANGELISM</text><text x=%22400%22 y=%22275%22 font-family=%22sans-serif%22 font-size=%2214%22 fill=%22%2378716c%22 text-anchor=%22middle%22>campus1.jpg 파일을 업로드해주세요</text></svg>';" />
+                onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1120 630%22><rect width=%221120%22 height=%22630%22 fill=%22%23e7e5e4%22/><text x=%22560%22 y=%22305%22 font-family=%22sans-serif%22 font-size=%2224%22 font-weight=%22bold%22 fill=%22%2357534e%22 text-anchor=%22middle%22>01. CAMPUS EVANGELISM</text><text x=%22560%22 y=%22342%22 font-family=%22sans-serif%22 font-size=%2216%22 fill=%22%2378716c%22 text-anchor=%22middle%22>campus1.jpg 파일을 업로드해주세요</text></svg>';" />
             </div>
 
-            <div class="ministry-main-text">
-              <span class="num-badge">01</span>
-              <h3>캠퍼스 복음화</h3>
-              <p>
-                매주 캠퍼스에서 청년들을 만나 복음을 전하고 함께 식탁을 나눕니다. 각 학과에 2~3명이 모여 기도하는 작은 모임을 세워 캠퍼스 전체에 복음이 흘러가는 움직임을 만듭니다.
-              </p>
-            </div>
-
-            <div class="sub-cards">
-              <div class="sub-card">
-                <h4>캠퍼스 정기모임</h4>
+            <div class="ministry-content">
+              <div class="ministry-main-text">
+                <span class="num-badge">01</span>
+                <h3>캠퍼스 복음화</h3>
                 <p>
-                  우리는 캠퍼스에서 함께 성장하고, 서로의 삶에 동행하는 공동체를 세우며 교회와 사회와 가정까지 선한 영향력을 확장해갑니다.
+                  매주 캠퍼스에서 청년들을 만나 복음을 전하고 함께 식탁을 나눕니다. 각 학과에 2~3명이 모여 기도하는 작은 모임을 세워 캠퍼스 전체에 복음이 흘러가는 움직임을 만듭니다.
                 </p>
               </div>
-              <div class="sub-card">
-                <h4>캠퍼스 전도모임</h4>
-                <p>
-                  매주 캠퍼스에서 다양한 청년들을 만나 가볍게 참여하는 활동과 대화를 나누며 자연스럽게 관계를 맺고, 사랑의 이야기를 전합니다.
-                </p>
+
+              <div class="sub-cards">
+                <div class="sub-card">
+                  <h4>캠퍼스 정기모임</h4>
+                  <p>
+                    우리는 캠퍼스에서 함께 성장하고, 서로의 삶에 동행하는 공동체를 세우며 교회와 사회와 가정까지 선한 영향력을 확장해갑니다.
+                  </p>
+                </div>
+                <div class="sub-card">
+                  <h4>캠퍼스 전도모임</h4>
+                  <p>
+                    매주 캠퍼스에서 다양한 청년들을 만나 가볍게 참여하는 활동과 대화를 나누며 자연스럽게 관계를 맺고, 사랑의 이야기를 전합니다.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
 
           <!-- Axis 02 -->
-          <div class="ministry-col">
+          <div class="ministry-block">
             <div class="img-box">
               <img src="./campus2.jpg" alt="비즈니스 선교훈련 현장"
-                onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 500%22><rect width=%22800%22 height=%22500%22 fill=%22%23e7e5e4%22/><text x=%22400%22 y=%22245%22 font-family=%22sans-serif%22 font-size=%2220%22 font-weight=%22bold%22 fill=%22%2357534e%22 text-anchor=%22middle%22>02. BUSINESS AS MISSION</text><text x=%22400%22 y=%22275%22 font-family=%22sans-serif%22 font-size=%2214%22 fill=%22%2378716c%22 text-anchor=%22middle%22>campus2.jpg 파일을 업로드해주세요</text></svg>';" />
+                onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1120 630%22><rect width=%221120%22 height=%22630%22 fill=%22%23e7e5e4%22/><text x=%22560%22 y=%22305%22 font-family=%22sans-serif%22 font-size=%2224%22 font-weight=%22bold%22 fill=%22%2357534e%22 text-anchor=%22middle%22>02. BUSINESS AS MISSION</text><text x=%22560%22 y=%22342%22 font-family=%22sans-serif%22 font-size=%2216%22 fill=%22%2378716c%22 text-anchor=%22middle%22>campus2.jpg 파일을 업로드해주세요</text></svg>';" />
             </div>
 
-            <div class="ministry-main-text">
-              <span class="num-badge">02</span>
-              <h3>비즈니스 선교훈련</h3>
-              <p>
-                캠퍼스 4년, 일터 40년. 대학 시절부터 일터 현장의 사람들을 만나며, 자신의 일과 비즈니스를 통해 하나님 나라의 운동에 참여하도록 훈련합니다.
-              </p>
-            </div>
-
-            <div class="sub-cards">
-              <div class="sub-card">
-                <h4>비즈니스 스터디</h4>
+            <div class="ministry-content">
+              <div class="ministry-main-text">
+                <span class="num-badge">02</span>
+                <h3>비즈니스 선교훈련</h3>
                 <p>
-                  성경적 가치관을 바탕으로 일과 삶을 다시 바라보고, 직장과 일상 속에서 하나님의 부르심에 합당한 삶을 살도록 돕는 훈련입니다. 일, 돈, 리더십, 관계, 비전 등 현실적인 주제들을 통해 자신의 일터를 신앙의 관점으로 연결하도록 돕습니다.
+                  캠퍼스 4년, 일터 40년. 대학 시절부터 일터 현장의 사람들을 만나며, 자신의 일과 비즈니스를 통해 하나님 나라의 운동에 참여하도록 훈련합니다.
                 </p>
+              </div>
+
+              <div class="sub-cards">
+                <div class="sub-card">
+                  <h4>비즈니스 스터디</h4>
+                  <p>
+                    성경적 가치관을 바탕으로 일과 삶을 다시 바라보고, 직장과 일상 속에서 하나님의 부르심에 합당한 삶을 살도록 돕는 훈련입니다. 일, 돈, 리더십, 관계, 비전 등 현실적인 주제들을 통해 자신의 일터를 신앙의 관점으로 연결하도록 돕습니다.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
 
           <!-- Axis 03 -->
-          <div class="ministry-col">
+          <div class="ministry-block">
             <div class="img-box">
               <img src="./campus3.jpg" alt="유학생 및 이주민 사역"
-                onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 500%22><rect width=%22800%22 height=%22500%22 fill=%22%23e7e5e4%22/><text x=%22400%22 y=%22245%22 font-family=%22sans-serif%22 font-size=%2220%22 font-weight=%22bold%22 fill=%22%2357534e%22 text-anchor=%22middle%22>03. DIASPORA &amp; FRIEND</text><text x=%22400%22 y=%22275%22 font-family=%22sans-serif%22 font-size=%2214%22 fill=%22%2378716c%22 text-anchor=%22middle%22>사진 준비 중</text></svg>';" />
+                onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1120 630%22><rect width=%221120%22 height=%22630%22 fill=%22%23e7e5e4%22/><text x=%22560%22 y=%22305%22 font-family=%22sans-serif%22 font-size=%2224%22 font-weight=%22bold%22 fill=%22%2357534e%22 text-anchor=%22middle%22>03. DIASPORA &amp; FRIEND</text><text x=%22560%22 y=%22342%22 font-family=%22sans-serif%22 font-size=%2216%22 fill=%22%2378716c%22 text-anchor=%22middle%22>사진 준비 중</text></svg>';" />
             </div>
 
-            <div class="ministry-main-text">
-              <span class="num-badge">03</span>
-              <h3>유학생 &amp; 이주민 사역</h3>
-              <p>
-                한국에서 공부하고 일하는 외국인 청년들에게 먼저 다가가 친구가 됩니다. 비타500 나눔과 식탁 교제로 환대하며 그리스도의 몸 된 공동체로 초대합니다.
-              </p>
-            </div>
+            <div class="ministry-content">
+              <div class="ministry-main-text">
+                <span class="num-badge">03</span>
+                <h3>유학생 &amp; 이주민 사역</h3>
+                <p>
+                  한국에서 공부하고 일하는 외국인 청년들에게 먼저 다가가 친구가 됩니다. 비타500 나눔과 식탁 교제로 환대하며 그리스도의 몸 된 공동체로 초대합니다.
+                </p>
+              </div>
 
-            <div class="sub-cards">
-              <div class="sub-card">
-                <h4>이주민 커뮤니티</h4>
-                <p>
-                  이주민 커뮤니티는 한국에서 외롭고 소외된 이주민들에게 먼저 다가가 친구가 되어주고, 사랑과 환대를 통해 예수 그리스도의 몸으로 초대하는 공동체입니다.
-                </p>
-                <p>
-                  우리는 하나님께서 열방을 우리의 이웃으로 보내셨다고 믿으며, 한 사람의 삶을 끝까지 함께 하고 자립과 회복까지 돕는 진정한 친구가 되고자 합니다.
-                </p>
-                <p>
-                  이주민 커뮤니티는 우리에게 다가온 사람들을 환대하고 사랑을 베푸는 친구 공동체입니다.
-                </p>
+              <div class="sub-cards">
+                <div class="sub-card">
+                  <h4>이주민 커뮤니티</h4>
+                  <p>
+                    이주민 커뮤니티는 한국에서 외롭고 소외된 이주민들에게 먼저 다가가 친구가 되어주고, 사랑과 환대를 통해 예수 그리스도의 몸으로 초대하는 공동체입니다.
+                  </p>
+                  <p>
+                    우리는 하나님께서 열방을 우리의 이웃으로 보내셨다고 믿으며, 한 사람의 삶을 끝까지 함께 하고 자립과 회복까지 돕는 진정한 친구가 되고자 합니다.
+                  </p>
+                  <p>
+                    이주민 커뮤니티는 우리에게 다가온 사람들을 환대하고 사랑을 베푸는 친구 공동체입니다.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
