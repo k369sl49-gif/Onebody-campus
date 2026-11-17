@@ -1,450 +1,83 @@
 <!DOCTYPE html>
-<html lang="ko" class="scroll-smooth">
+<html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ONEBODY — Campus Community</title>
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Pretendard Variable & Google Fonts -->
-  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            mono: {
-              bg: '#F7F6F2',
-              surface: '#FFFFFF',
-              subtle: '#EFECE6',
-              line: '#D6D3CD',
-              dark: '#18181B',
-              muted: '#57534E',
-              campus: '#D9532F'
-            }
-          },
-          fontFamily: {
-            sans: ['"Pretendard Variable"', 'Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif'],
-            serif: ['"Pretendard Variable"', 'Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'monospace']
-          }
-        }
-      }
-    }
-  </script>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ONEBODY — 캠퍼스 커뮤니티</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
   <style>
+    :root {
+      --bg-paper: #F7F6F2;
+      --bg-card: #FFFFFF;
+      --bg-card-sub: #EFEDE6;
+      --text-main: #1C1917;
+      --text-sub: #57534E;
+      --text-muted: #78716C;
+      --border-line: #D6D3D1;
+      --border-light: #E7E5E4;
+      --accent-dark: #1C1917;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      background-color: #F7F6F2;
-      color: #18181B;
-      font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-      word-break: keep-all;
-      overflow-wrap: break-word;
+      background-color: var(--bg-paper);
+      color: var(--text-main);
+      font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+      line-height: 1.65;
       -webkit-font-smoothing: antialiased;
+      word-break: keep-all;
     }
-    ::selection {
-      background-color: #18181B;
-      color: #F7F6F2;
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
-  </style>
-</head>
-<body id="top" class="min-h-screen flex flex-col bg-mono-bg text-mono-dark leading-relaxed">
 
-  <!-- 1. 상단 헤더 -->
-  <header class="sticky top-0 z-40 bg-mono-bg/95 backdrop-blur-md border-b border-stone-300">
-    <div class="max-w-[1440px] mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
-      
-      <!-- 원바디 심볼 및 로고 -->
-      <a href="#top" class="flex items-center group py-1" title="ONEBODY — Campus Community">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 54" class="h-9 w-auto text-mono-dark transition-opacity group-hover:opacity-75">
-          <text x="0" y="34" font-family="'Cormorant Garamond', 'Times New Roman', serif" font-size="40" font-weight="700" letter-spacing="-1.2" fill="currentColor">onebody</text>
-          <text x="2" y="49" font-family="'JetBrains Mono', 'Pretendard', sans-serif" font-size="8.5" font-weight="600" letter-spacing="3.2" fill="#57534E">CAMPUS COMMUNITY</text>
-        </svg>
-      </a>
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-      <!-- 내비게이션 링크 및 액션 버튼 -->
-      <div class="flex items-center gap-6 sm:gap-8">
-        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-mono-muted">
-          <a href="#ministry" class="hover:text-mono-dark transition-colors">캠퍼스 사역</a>
-          <a href="#together" class="hover:text-mono-dark transition-colors">함께하는 여정</a>
-          <a href="#support" class="hover:text-mono-dark transition-colors">후원 안내</a>
-        </nav>
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background-color: rgba(247, 246, 242, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-line);
+    }
 
-        <a 
-          href="#support" 
-          class="inline-flex items-center px-4 py-2 rounded-lg bg-mono-dark hover:bg-stone-800 text-white text-xs font-semibold tracking-wider transition-colors"
-        >
-          후원 안내
-        </a>
-      </div>
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
 
-    </div>
-  </header>
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: -0.02em;
+    }
 
-  <!-- 2. 메인 콘텐츠 -->
-  <main class="flex-grow">
-
-    <!-- 히어로 섹션 (#vision) -->
-    <section id="vision" class="border-b border-stone-300 bg-white">
-      <div class="max-w-[1440px] mx-auto px-6 md:px-12 py-16 md:py-24">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-mono-campus text-mono-campus font-mono text-xs mb-6">
-          <span class="w-2 h-2 rounded-full bg-mono-campus"></span>
-          ONEBODY CAMPUS COMMUNITY
-        </div>
-
-        <h1 class="font-sans text-3xl sm:text-5xl lg:text-6xl font-bold leading-[1.2] text-mono-dark max-w-4xl mb-6 tracking-[-0.03em]">
-          캠퍼스 커뮤니티<br>
-          <span class="text-mono-campus">“우리는 대학이 바뀌면, 세상이 바뀐다고 믿습니다.”</span>
-        </h1>
-
-        <p class="text-base sm:text-lg text-mono-muted max-w-2xl leading-relaxed">
-          2010년 예수님처럼 살고 싶다는 한 사람의 순종에서 시작되었습니다.
-          경쟁과 비교 속에 방향을 잃은 청년들에게 복음의 참된 안식을 전하고, 학과마다 작은 기도모임을 개척하며 세상으로 파송합니다.
-        </p>
-      </div>
-    </section>
-
-    <!-- 캠퍼스 사역 3대 축 (#ministry) -->
-    <section id="ministry" class="border-b border-stone-300">
-      <div class="max-w-[1440px] mx-auto px-6 md:px-12 py-20 md:py-28">
-        <div class="mb-14">
-          <span class="font-mono text-xs text-mono-muted tracking-[0.2em] uppercase block mb-2">(CAMPUS MINISTRY)</span>
-          <h2 class="font-sans text-2xl sm:text-4xl font-bold text-mono-dark tracking-[-0.02em]">캠퍼스 사역의 세 가지 축</h2>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
-          
-          <!-- 01. 캠퍼스 복음화 -->
-          <div class="space-y-8">
-            <div class="space-y-5">
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-stone-200 border border-stone-300 relative group">
-                <!-- 캠퍼스 복음화 현장 아트워크 (실제 campus1.jpg 업로드 시 자동 대체) -->
-                <svg id="art-campus1" viewBox="0 0 800 500" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <linearGradient id="sky1" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stop-color="#D4D4D0"/>
-                      <stop offset="100%" stop-color="#ECECE8"/>
-                    </linearGradient>
-                  </defs>
-                  <!-- 하늘 및 캠퍼스 본관 실루엣 -->
-                  <rect width="800" height="500" fill="url(#sky1)"/>
-                  <!-- 뒷산 및 수목 -->
-                  <path d="M0,260 Q140,140 280,240 T560,210 T800,250 L800,320 L0,320 Z" fill="#A8A8A2"/>
-                  <!-- 캠퍼스 아치형 본관 건물 -->
-                  <rect x="330" y="185" width="220" height="95" fill="#F4F4F0" stroke="#787872" stroke-width="1.5"/>
-                  <path d="M405,235 L405,180 A12,12 0 0,1 429,180 L429,235 M429,235 L429,180 A12,12 0 0,1 453,180 L453,235 M453,235 L453,180 A12,12 0 0,1 477,180 L477,235" fill="none" stroke="#52524E" stroke-width="3"/>
-                  <!-- 중앙 계단 -->
-                  <polygon points="350,280 530,280 560,330 320,330" fill="#D6D6D0" stroke="#8C8C86" stroke-width="1"/>
-                  <!-- 광장 바닥 -->
-                  <rect x="0" y="320" width="800" height="180" fill="#52524E"/>
-                  <!-- 좌측 소나무 실루엣 -->
-                  <path d="M40,320 L40,150 Q90,110 140,160 Q180,190 150,250 L150,320 Z" fill="#40403C"/>
-                  <!-- 청년 11명 단체 실루엣 및 피켓 -->
-                  <g fill="#262624">
-                    <circle cx="115" cy="245" r="16"/><rect x="92" y="264" width="46" height="165" rx="10"/>
-                    <circle cx="168" cy="252" r="15"/><rect x="148" y="270" width="42" height="155" rx="10"/>
-                    <circle cx="222" cy="235" r="15"/><rect x="202" y="253" width="42" height="160" rx="10"/>
-                    <circle cx="275" cy="248" r="16"/><rect x="252" y="267" width="46" height="165" rx="10"/>
-                    <circle cx="330" cy="242" r="15"/><rect x="312" y="260" width="40" height="155" rx="10"/>
-                    <circle cx="388" cy="236" r="17"/><rect x="364" y="256" width="48" height="175" rx="10"/>
-                    <circle cx="445" cy="238" r="15"/><rect x="427" y="256" width="38" height="160" rx="10"/>
-                    <circle cx="495" cy="248" r="15"/><rect x="475" y="266" width="42" height="165" rx="10"/>
-                    <circle cx="545" cy="242" r="14"/><rect x="528" y="259" width="36" height="155" rx="10"/>
-                    <circle cx="600" cy="236" r="16"/><rect x="578" y="255" width="46" height="170" rx="10"/>
-                    <circle cx="655" cy="230" r="15"/><rect x="636" y="248" width="40" height="170" rx="10"/>
-                    <circle cx="712" cy="222" r="17"/><rect x="688" y="242" width="50" height="185" rx="10"/>
-                  </g>
-                  <!-- 피켓 1: ONEBODY COMMUNITY -->
-                  <rect x="68" y="282" width="66" height="82" fill="#F7F6F2" stroke="#18181B" stroke-width="1.5"/>
-                  <text x="101" y="318" font-family="sans-serif" font-size="8" font-weight="700" text-anchor="middle" fill="#18181B">Onebody</text>
-                  <text x="101" y="329" font-family="sans-serif" font-size="7" font-weight="600" text-anchor="middle" fill="#52524E">Community</text>
-                  <!-- 피켓 2: 추억의 뽑기판 -->
-                  <rect x="144" y="286" width="56" height="72" fill="#E6E6E0" stroke="#18181B" stroke-width="1.5"/>
-                  <text x="172" y="305" font-family="sans-serif" font-size="7.5" font-weight="700" text-anchor="middle" fill="#18181B">추억의</text>
-                  <text x="172" y="316" font-family="sans-serif" font-size="9" font-weight="800" text-anchor="middle" fill="#18181B">뽑기판</text>
-                  <!-- 피켓 3: ONEBODY COMMUNITY -->
-                  <rect x="246" y="285" width="68" height="84" fill="#F7F6F2" stroke="#18181B" stroke-width="1.5"/>
-                  <text x="280" y="322" font-family="sans-serif" font-size="8.5" font-weight="700" text-anchor="middle" fill="#18181B">Onebody</text>
-                  <text x="280" y="333" font-family="sans-serif" font-size="7" font-weight="600" text-anchor="middle" fill="#52524E">Community</text>
-                  <!-- 피켓 4: ONEBODY COMMUNITY -->
-                  <rect x="568" y="278" width="68" height="84" fill="#F7F6F2" stroke="#18181B" stroke-width="1.5"/>
-                  <text x="602" y="315" font-family="sans-serif" font-size="8.5" font-weight="700" text-anchor="middle" fill="#18181B">Onebody</text>
-                  <text x="602" y="326" font-family="sans-serif" font-size="7" font-weight="600" text-anchor="middle" fill="#52524E">Community</text>
-                  <!-- 하단 아카이브 캡션 배지 -->
-                  <rect x="16" y="456" width="248" height="28" rx="4" fill="#18181B" fill-opacity="0.85"/>
-                  <text x="28" y="474" font-family="'JetBrains Mono', monospace" font-size="10" fill="#F7F6F2" letter-spacing="0.8">ARCHIVE 01 · CAMPUS OUTREACH</text>
-                </svg>
-                <img 
-                  src="./campus1.jpg" 
-                  alt="캠퍼스 복음화 현장" 
-                  onload="document.getElementById('art-campus1').style.display='none'; this.classList.remove('hidden');"
-                  onerror="this.style.display='none';"
-                  class="hidden w-full h-full object-cover filter grayscale contrast-105 group-hover:scale-105 transition-transform duration-700"
-                >
-              </div>
-              <div class="space-y-3">
-                <span class="font-mono text-xs text-mono-muted">01</span>
-                <h3 class="font-sans text-2xl font-bold text-mono-dark tracking-tight">캠퍼스 복음화</h3>
-                <p class="text-sm text-mono-muted leading-relaxed">
-                  매주 캠퍼스에서 청년들을 만나 복음을 전하고 함께 식탁을 나눕니다. 각 학과에 2~3명이 모여 기도하는 작은 모임을 세워 캠퍼스 전체에 복음이 흘러가는 움직임을 만듭니다.
-                </p>
-              </div>
-            </div>
-
-            <!-- 하위 모임 카드 -->
-            <div class="space-y-4">
-              <div class="p-6 rounded-xl bg-white border border-stone-300 space-y-2.5 shadow-sm">
-                <h4 class="text-base font-bold text-mono-dark">캠퍼스 정기모임</h4>
-                <p class="text-sm text-mono-muted leading-relaxed">
-                  우리는 캠퍼스에서 함께 성장하고, 서로의 삶에 동행하는 공동체를 세우며 교회와 사회와 가정까지 선한 영향력을 확장해갑니다.
-                </p>
-              </div>
-
-              <div class="p-6 rounded-xl bg-white border border-stone-300 space-y-2.5 shadow-sm">
-                <h4 class="text-base font-bold text-mono-dark">캠퍼스 전도모임</h4>
-                <p class="text-sm text-mono-muted leading-relaxed">
-                  매주 캠퍼스에서 다양한 청년들을 만나 가볍게 참여하는 활동과 대화를 나누며 자연스럽게 관계를 맺고, 사랑의 이야기를 전합니다.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- 02. 비즈니스 선교훈련 -->
-          <div class="space-y-8">
-            <div class="space-y-5">
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-stone-200 border border-stone-300 relative group">
-                <!-- 비즈니스 선교훈련 현장 아트워크 (실제 campus2.jpg 업로드 시 자동 대체) -->
-                <svg id="art-campus2" viewBox="0 0 800 500" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" xmlns="http://www.w3.org/2000/svg">
-                  <!-- 벽돌 성전 배경 -->
-                  <rect width="800" height="500" fill="#2E2E2B"/>
-                  <rect x="45" y="0" width="710" height="360" fill="#3B3B37" stroke="#52524E" stroke-width="1"/>
-                  <!-- 상단 조명 트러스 -->
-                  <line x1="120" y1="28" x2="680" y2="28" stroke="#18181B" stroke-width="6"/>
-                  <circle cx="220" cy="40" r="7" fill="#D4D4D0"/><circle cx="310" cy="40" r="7" fill="#D4D4D0"/>
-                  <circle cx="490" cy="40" r="7" fill="#D4D4D0"/><circle cx="580" cy="40" r="7" fill="#D4D4D0"/>
-                  <!-- 대형 LED 스크린: WORKPLACE EXPERIENCE WELCOME DAY -->
-                  <rect x="175" y="65" width="450" height="175" rx="4" fill="#1C1C1A" stroke="#52524E" stroke-width="2"/>
-                  <text x="242" y="102" font-family="sans-serif" font-size="9" fill="#A8A8A2" letter-spacing="1.2">WORKPLACE EXPERIENCE</text>
-                  <text x="242" y="136" font-family="serif" font-style="italic" font-size="25" font-weight="700" fill="#F4F4F0" letter-spacing="1.5">WELCOME DAY</text>
-                  <line x1="242" y1="148" x2="555" y2="148" stroke="#52524E" stroke-width="1"/>
-                  <text x="242" y="168" font-family="sans-serif" font-size="8.5" fill="#D4D4D0">일시  |  2026.10.24 SAT 14:00 - 17:00</text>
-                  <text x="242" y="183" font-family="sans-serif" font-size="8.5" fill="#D4D4D0">장소  |  한사랑교회 (서울특별시 양천구 목동동로 33)</text>
-                  <!-- 강단 바닥 -->
-                  <rect x="0" y="345" width="800" height="155" fill="#6E6E68"/>
-                  <!-- 다세대 공동체 단체 실루엣 (뒷줄·중간줄·앞줄 어린이) -->
-                  <g fill="#4A4A46">
-                    <circle cx="130" cy="275" r="10"/><circle cx="170" cy="272" r="10"/><circle cx="210" cy="274" r="10"/>
-                    <circle cx="250" cy="270" r="10"/><circle cx="290" cy="273" r="10"/><circle cx="330" cy="268" r="10"/>
-                    <circle cx="370" cy="271" r="10"/><circle cx="410" cy="268" r="10"/><circle cx="450" cy="270" r="10"/>
-                    <circle cx="490" cy="272" r="10"/><circle cx="530" cy="269" r="10"/><circle cx="570" cy="273" r="10"/>
-                    <circle cx="610" cy="271" r="10"/><circle cx="650" cy="274" r="10"/><circle cx="690" cy="276" r="10"/>
-                  </g>
-                  <g fill="#262624">
-                    <circle cx="105" cy="305" r="12"/><rect x="90" y="319" width="30" height="95" rx="6"/>
-                    <circle cx="155" cy="302" r="12"/><rect x="140" y="316" width="30" height="98" rx="6"/>
-                    <circle cx="205" cy="304" r="12"/><rect x="190" y="318" width="30" height="96" rx="6"/>
-                    <circle cx="260" cy="300" r="12"/><rect x="245" y="314" width="30" height="100" rx="6"/>
-                    <circle cx="315" cy="302" r="12"/><rect x="300" y="316" width="30" height="98" rx="6"/>
-                    <circle cx="395" cy="296" r="13"/><rect x="378" y="311" width="34" height="105" rx="6"/>
-                    <circle cx="455" cy="302" r="12"/><rect x="440" y="316" width="30" height="98" rx="6"/>
-                    <circle cx="515" cy="300" r="12"/><rect x="500" y="314" width="30" height="100" rx="6"/>
-                    <circle cx="575" cy="303" r="12"/><rect x="560" y="317" width="30" height="97" rx="6"/>
-                    <circle cx="635" cy="301" r="12"/><rect x="620" y="315" width="30" height="99" rx="6"/>
-                    <circle cx="695" cy="305" r="12"/><rect x="680" y="319" width="30" height="95" rx="6"/>
-                  </g>
-                  <!-- 앞줄 어린이들 실루엣 -->
-                  <g fill="#D6D6D0">
-                    <circle cx="135" cy="365" r="9"/><rect x="123" y="376" width="24" height="58" rx="5"/>
-                    <circle cx="195" cy="368" r="9"/><rect x="183" y="379" width="24" height="55" rx="5"/>
-                    <circle cx="250" cy="372" r="8"/><rect x="239" y="382" width="22" height="52" rx="5"/>
-                    <circle cx="310" cy="364" r="9"/><rect x="298" y="375" width="24" height="59" rx="5"/>
-                    <circle cx="385" cy="360" r="9.5"/><rect x="372" y="372" width="26" height="62" rx="5"/>
-                    <circle cx="475" cy="362" r="9.5"/><rect x="462" y="374" width="26" height="60" rx="5"/>
-                    <circle cx="565" cy="364" r="9"/><rect x="553" y="375" width="24" height="59" rx="5"/>
-                  </g>
-                  <!-- 하단 아카이브 캡션 배지 -->
-                  <rect x="16" y="456" width="256" height="28" rx="4" fill="#18181B" fill-opacity="0.85"/>
-                  <text x="28" y="474" font-family="'JetBrains Mono', monospace" font-size="10" fill="#F7F6F2" letter-spacing="0.8">ARCHIVE 02 · WORKPLACE MISSION</text>
-                </svg>
-                <img 
-                  src="./campus2.jpg" 
-                  alt="비즈니스 선교훈련 현장" 
-                  onload="document.getElementById('art-campus2').style.display='none'; this.classList.remove('hidden');"
-                  onerror="this.style.display='none';"
-                  class="hidden w-full h-full object-cover filter grayscale contrast-105 group-hover:scale-105 transition-transform duration-700"
-                >
-              </div>
-              <div class="space-y-3">
-                <span class="font-mono text-xs text-mono-muted">02</span>
-                <h3 class="font-sans text-2xl font-bold text-mono-dark tracking-tight">비즈니스 선교훈련</h3>
-                <p class="text-sm text-mono-muted leading-relaxed">
-                  캠퍼스 4년, 일터 40년. 대학 시절부터 일터 현장의 사람들을 만나며, 자신의 일과 비즈니스를 통해 하나님 나라의 운동에 참여하도록 훈련합니다.
-                </p>
-              </div>
-            </div>
-
-            <!-- 하위 모임 카드 -->
-            <div class="space-y-4">
-              <div class="p-6 rounded-xl bg-white border border-stone-300 space-y-2.5 shadow-sm">
-                <h4 class="text-base font-bold text-mono-dark">비즈니스 스터디</h4>
-                <p class="text-sm text-mono-muted leading-relaxed">
-                  성경적 가치관을 바탕으로 일과 삶을 다시 바라보고, 직장과 일상 속에서 하나님의 부르심에 합당한 삶을 살도록 돕는 훈련입니다. 일, 돈, 리더십, 관계, 비전 등 현실적인 주제들을 통해 자신의 일터를 신앙의 관점으로 연결하도록 돕습니다.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- 03. 유학생 & 이주민 사역 -->
-          <div class="space-y-8">
-            <div class="space-y-5">
-              <div class="aspect-[16/10] w-full rounded-xl overflow-hidden bg-[#EFECE6] border border-stone-300 relative group">
-                <img 
-                  src="./campus3.jpg" 
-                  alt="유학생 및 이주민 사역" 
-                  onerror="this.onerror=null; this.src='https://placehold.co/1200x750/EFECE6/57534E?text=03.+유학생+및+이주민+사역+(사진+준비중)';"
-                  class="w-full h-full object-cover filter grayscale contrast-105 group-hover:scale-105 transition-transform duration-700"
-                >
-              </div>
-              <div class="space-y-3">
-                <span class="font-mono text-xs text-mono-muted">03</span>
-                <h3 class="font-sans text-2xl font-bold text-mono-dark tracking-tight">유학생 &amp; 이주민 사역</h3>
-                <p class="text-sm text-mono-muted leading-relaxed">
-                  한국에서 공부하고 일하는 외국인 청년들에게 먼저 다가가 친구가 됩니다. 비타500 나눔과 식탁 교제로 환대하며 그리스도의 몸 된 공동체로 초대합니다.
-                </p>
-              </div>
-            </div>
-
-            <!-- 하위 모임 카드 -->
-            <div class="space-y-4">
-              <div class="p-6 rounded-xl bg-white border border-stone-300 space-y-3 shadow-sm">
-                <h4 class="text-base font-bold text-mono-dark">이주민 커뮤니티</h4>
-                <div class="text-sm text-mono-muted leading-relaxed space-y-2.5">
-                  <p>
-                    이주민 커뮤니티는 한국에서 외롭고 소외된 이주민들에게 먼저 다가가 친구가 되어주고, 사랑과 환대를 통해 예수 그리스도의 몸으로 초대하는 공동체입니다.
-                  </p>
-                  <p>
-                    우리는 하나님께서 열방을 우리의 이웃으로 보내셨다고 믿으며, 한 사람의 삶을 끝까지 함께 하고 자립과 회복까지 돕는 진정한 친구가 되고자 합니다.
-                  </p>
-                  <p class="text-mono-dark font-medium">
-                    이주민 커뮤니티는 우리에게 다가온 사람들을 환대하고 사랑을 베푸는 친구 공동체입니다.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- 우리가 함께 하는 것 (#together) -->
-    <section id="together" class="border-b border-stone-300">
-      <div class="max-w-[1440px] mx-auto px-6 md:px-12 py-20 md:py-28">
-        <div class="mb-14">
-          <span class="font-mono text-xs text-mono-muted tracking-[0.2em] uppercase block mb-2">(TOGETHER WE JOURNEY)</span>
-          <h2 class="font-sans text-2xl sm:text-4xl font-bold text-mono-dark tracking-[-0.02em]">우리가 함께 하는 것</h2>
-        </div>
-
-        <div class="flex flex-col gap-6">
-          
-          <!-- 첫 번째 풀와이드 박스: 안식 컨퍼런스 -->
-          <div class="w-full p-8 sm:p-10 rounded-xl bg-white border border-stone-300 space-y-4 shadow-sm">
-            <h3 class="font-sans text-2xl font-bold text-mono-dark tracking-tight">안식 컨퍼런스</h3>
-            <div class="space-y-3 text-sm sm:text-base text-mono-muted leading-relaxed">
-              <p>
-                원바디 안식 컨퍼런스는 공동체가 일상을 멈추고 하나님이 창조하신 자연 속에서 함께 쉼과 예배, 교제와 축제를 누리며 몸과 마음과 영혼의 회복을 경험하는 3박 4일의 여정입니다.
-              </p>
-              <p>
-                이 컨퍼런스는 안식을 하나님의 선물로 받아들이며 하나님께 순종하는 공동체적 결단 가운데, 서로의 이야기를 나누고 하나님의 뜻을 함께 발견하며 하나님과 공동체와의 친밀함을 깊이 세워가는 시간입니다.
-              </p>
-            </div>
-          </div>
-
-          <!-- 두 번째 풀와이드 박스: 평화와 화해를 향한 여정 -->
-          <div class="w-full p-8 sm:p-10 rounded-xl bg-white border border-stone-300 space-y-4 shadow-sm">
-            <h3 class="font-sans text-2xl font-bold text-mono-dark tracking-tight">평화와 화해를 향한 여정</h3>
-            <div class="space-y-3 text-sm sm:text-base text-mono-muted leading-relaxed">
-              <p>
-                평화와 화해를 향한 여정은 갈등과 분열이 가득한 이 시대에 평화와 화해를 회복하고자 선한 영향력을 끼쳤던 역사적 인물들의 기념관을 탐방하며 사랑과 이해를 배워가는 청년들의 여정입니다.
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- 후원 안내 (#support) -->
-    <section id="support" class="border-b border-stone-300 bg-white py-20 md:py-28 px-6 md:px-12">
-      <div class="max-w-3xl mx-auto rounded-2xl border-2 border-mono-campus bg-mono-bg p-8 sm:p-12 relative shadow-sm">
-        <div class="font-mono text-xs text-mono-campus tracking-widest uppercase mb-2">
-          Onebody Community – Campus Mission
-        </div>
-
-        <h2 class="font-sans text-2xl sm:text-3xl font-bold text-mono-dark mb-6 tracking-tight">
-          “우리는 대학이 바뀌면, 세상이 바뀐다고 믿습니다.”
-        </h2>
-
-        <div class="space-y-4 text-sm text-mono-muted leading-relaxed mb-8">
-          <p class="text-mono-dark">
-            원바디 커뮤니티의 <strong>Campus Mission</strong>은 매주 캠퍼스에서 청년들을 만나 복음을 전하고, 함께 삶을 나누며 예수님의 제자로 세워갑니다. 한 사람을 공동체 안에서 세워 캠퍼스에서 세상으로 보냅니다.
-          </p>
-
-          <div class="p-5 rounded-xl bg-white border border-stone-300 space-y-3">
-            <p><strong>1. 캠퍼스 복음화:</strong> 한 사람에게 복음을 전하고 예수님의 제자로 함께 살아갑니다. 각 학과에 기도모임을 세우고 연결하여, 캠퍼스 전체에 복음이 흘러가는 움직임을 만들어갑니다.</p>
-            <p><strong>2. 비즈니스 선교훈련:</strong> 캠퍼스 4년, 일터 40년. 캠퍼스에서부터 실제 일터와 비즈니스 현장의 사람들을 만나며, 자신의 일과 비즈니스를 통해 하나님 나라의 운동에 참여하도록 훈련합니다.</p>
-          </div>
-
-          <p>
-            여러분의 후원은 캠퍼스에서 한 사람을 만나 복음을 전하고, 공동체 안에서 제자로 세워 세상으로 보내는 사역에 사용됩니다.
-          </p>
-
-          <div class="p-4 rounded-xl bg-mono-subtle border border-stone-300">
-            <p class="text-base font-bold text-mono-dark mb-1">매월 1만 원으로 함께할 500명의 동역자를 초대합니다.</p>
-            <p class="text-xs text-mono-muted">여러분의 동역으로 캠퍼스의 한 사람을 만나고 세상으로 보내는 사역을 계속 이어갈 수 있습니다.</p>
-          </div>
-        </div>
-
-        <div>
-          <a 
-            href="https://go.missionfund.org/onebodycampusmission" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            class="flex items-center justify-center gap-2.5 w-full px-7 py-4 rounded-xl bg-mono-campus hover:bg-mono-campus/90 text-white font-mono text-xs sm:text-sm font-semibold tracking-wider transition-all"
-          >
-            <span>캠퍼스 미션 후원 동참하기 (미션펀드 링크)</span>
-            <span>↗</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- 3. 어두운 톤 푸터 -->
-  <footer class="bg-mono-dark text-white py-14">
-    <div class="max-w-[1440px] mx-auto px-6 md:px-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-      <div class="space-y-3">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 54" class="h-9 w-auto text-white">
-          <text x="0" y="34" font-family="'Cormorant Garamond', 'Times New Roman', serif" font-size="40" font-weight="700" letter-spacing="-1.2" fill="#FFFFFF">onebody</text>
-          <text x="2" y="49" font-family="'JetBrains Mono', 'Pretendard', sans-serif" font-size="8.5" font-weight="600" letter-spacing="3.2" fill="#A8A29E">CAMPUS COMMUNITY</text>
-        </svg>
-        <p class="text-xs text-stone-400">
-          서로 사랑함으로 세상 속에 존재하는 안식공동체 &bull; 천안 대학지역
-        </p>
-      </div>
-
-      <div class="font-mono text-[11px] text-stone-500">
-        &copy; 2026 ONEBODY COMMUNITY &amp; CHURCH. ALL RIGHTS RESERVED.
-      </div>
-    </div>
-  </footer>
-
-</body>
-</html>
+    .brand-dot {
+      width: 10px;
+      height: 10px;
+      background-color: var(--text-main);
+      border-radius: 50%;
+      display: inline-block;
+    }
