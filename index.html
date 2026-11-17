@@ -81,3 +81,541 @@
       border-radius: 50%;
       display: inline-block;
     }
+
+    .nav-group {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-sub);
+    }
+
+    .nav-links a:hover {
+      color: var(--text-main);
+    }
+
+    .btn-header {
+      background-color: var(--accent-dark);
+      color: #FFFFFF;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 9px 16px;
+      border-radius: 4px;
+      transition: opacity 0.2s;
+    }
+
+    .btn-header:hover {
+      opacity: 0.85;
+    }
+
+    /* Section Common */
+    section {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border-line);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .eyebrow-line {
+      width: 24px;
+      height: 1px;
+      background-color: var(--text-muted);
+      display: inline-block;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 96px 0 88px;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 span {
+      display: block;
+      font-size: clamp(20px, 3vw, 28px);
+      font-weight: 600;
+      color: var(--text-sub);
+      margin-top: 10px;
+    }
+
+    .hero p {
+      max-width: 680px;
+      font-size: 17px;
+      color: var(--text-sub);
+      line-height: 1.75;
+    }
+
+    /* Section Header */
+    .section-title-wrap {
+      margin-bottom: 48px;
+    }
+
+    .section-title-wrap h2 {
+      font-size: clamp(26px, 3.5vw, 34px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    /* 3-Column Ministry Grid */
+    .ministry-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      align-items: start;
+    }
+
+    .ministry-col {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .img-box {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      background-color: #E7E5E4;
+      border: 1px solid var(--border-line);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(100%) contrast(1.04);
+    }
+
+    .ministry-main-text {
+      padding-top: 4px;
+    }
+
+    .num-badge {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .ministry-main-text h3 {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    .ministry-main-text p {
+      font-size: 15px;
+      color: var(--text-sub);
+      line-height: 1.7;
+    }
+
+    /* Sub-cards inside each ministry */
+    .sub-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 4px;
+    }
+
+    .sub-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-light);
+      padding: 20px 22px;
+    }
+
+    .sub-card h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    .sub-card p {
+      font-size: 14px;
+      color: var(--text-sub);
+      line-height: 1.65;
+    }
+
+    .sub-card p + p {
+      margin-top: 10px;
+    }
+
+    /* Together Section (2 Full-Width Stacked Boxes) */
+    .together-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .together-box {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-line);
+      padding: 36px 40px;
+    }
+
+    .together-box h3 {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .together-box p {
+      font-size: 15.5px;
+      color: var(--text-sub);
+      line-height: 1.75;
+    }
+
+    .together-box p + p {
+      margin-top: 12px;
+    }
+
+    /* Support Section */
+    .support-box {
+      background-color: var(--bg-card);
+      border: 1px solid var(--text-main);
+      padding: 48px;
+    }
+
+    .support-eyebrow {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .support-box h2 {
+      font-size: clamp(24px, 3.5vw, 32px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+
+    .support-body {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      font-size: 15.5px;
+      color: var(--text-sub);
+      line-height: 1.75;
+      margin-bottom: 36px;
+    }
+
+    .support-highlight {
+      background-color: var(--bg-paper);
+      border-left: 3px solid var(--text-main);
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .support-call {
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .btn-support-full {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      background-color: var(--accent-dark);
+      color: #FFFFFF;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 20px 28px;
+      transition: opacity 0.2s;
+    }
+
+    .btn-support-full:hover {
+      opacity: 0.9;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #1C1917;
+      color: #A8A29E;
+      padding: 48px 0;
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-brand {
+      color: #F7F6F2;
+      font-weight: 800;
+      font-size: 16px;
+      letter-spacing: 0.04em;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .ministry-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      .nav-links {
+        display: none;
+      }
+      .together-box, .support-box {
+        padding: 28px 24px;
+      }
+    }
+  </style>
+</head>
+<body id="top">
+
+  <header>
+    <div class="container header-inner">
+      <a href="#top" class="brand">
+        <span class="brand-dot"></span>
+        <span>ONEBODY</span>
+      </a>
+
+      <div class="nav-group">
+        <nav class="nav-links">
+          <a href="#ministry">캠퍼스 사역</a>
+          <a href="#together">함께하는 여정</a>
+          <a href="#support">후원 안내</a>
+        </nav>
+        <a href="#support" class="btn-header">후원 안내</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- 01. Vision Hero -->
+    <section id="vision" class="hero">
+      <div class="container">
+        <div class="eyebrow">
+          <span class="eyebrow-line"></span>
+          <span>ONEBODY CAMPUS COMMUNITY</span>
+        </div>
+
+        <h1>
+          캠퍼스 커뮤니티
+          <span>“우리는 대학이 바뀌면, 세상이 바뀐다고 믿습니다.”</span>
+        </h1>
+
+        <p>
+          2010년 예수님처럼 살고 싶다는 한 사람의 순종에서 시작되었습니다.
+          경쟁과 비교 속에 방향을 잃은 청년들에게 복음의 참된 안식을 전하고, 학과마다 작은 기도모임을 개척하며 세상으로 파송합니다.
+        </p>
+      </div>
+    </section>
+
+    <!-- 02. Campus Ministry (3 Columns) -->
+    <section id="ministry">
+      <div class="container">
+        <div class="section-title-wrap">
+          <div class="eyebrow">
+            <span class="eyebrow-line"></span>
+            <span>CAMPUS MINISTRY</span>
+          </div>
+          <h2>캠퍼스 사역의 세 가지 축</h2>
+        </div>
+
+        <div class="ministry-grid">
+
+          <!-- Axis 01 -->
+          <div class="ministry-col">
+            <div class="img-box">
+              <img src="./campus1.jpg" alt="캠퍼스 복음화 현장"
+                onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 500%22><rect width=%22800%22 height=%22500%22 fill=%22%23e7e5e4%22/><text x=%22400%22 y=%22245%22 font-family=%22sans-serif%22 font-size=%2220%22 font-weight=%22bold%22 fill=%22%2357534e%22 text-anchor=%22middle%22>01. CAMPUS EVANGELISM</text><text x=%22400%22 y=%22275%22 font-family=%22sans-serif%22 font-size=%2214%22 fill=%22%2378716c%22 text-anchor=%22middle%22>campus1.jpg 파일을 업로드해주세요</text></svg>';" />
+            </div>
+
+            <div class="ministry-main-text">
+              <span class="num-badge">01</span>
+              <h3>캠퍼스 복음화</h3>
+              <p>
+                매주 캠퍼스에서 청년들을 만나 복음을 전하고 함께 식탁을 나눕니다. 각 학과에 2~3명이 모여 기도하는 작은 모임을 세워 캠퍼스 전체에 복음이 흘러가는 움직임을 만듭니다.
+              </p>
+            </div>
+
+            <div class="sub-cards">
+              <div class="sub-card">
+                <h4>캠퍼스 정기모임</h4>
+                <p>
+                  우리는 캠퍼스에서 함께 성장하고, 서로의 삶에 동행하는 공동체를 세우며 교회와 사회와 가정까지 선한 영향력을 확장해갑니다.
+                </p>
+              </div>
+              <div class="sub-card">
+                <h4>캠퍼스 전도모임</h4>
+                <p>
+                  매주 캠퍼스에서 다양한 청년들을 만나 가볍게 참여하는 활동과 대화를 나누며 자연스럽게 관계를 맺고, 사랑의 이야기를 전합니다.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Axis 02 -->
+          <div class="ministry-col">
+            <div class="img-box">
+              <img src="./campus2.jpg" alt="비즈니스 선교훈련 현장"
+                onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 500%22><rect width=%22800%22 height=%22500%22 fill=%22%23e7e5e4%22/><text x=%22400%22 y=%22245%22 font-family=%22sans-serif%22 font-size=%2220%22 font-weight=%22bold%22 fill=%22%2357534e%22 text-anchor=%22middle%22>02. BUSINESS AS MISSION</text><text x=%22400%22 y=%22275%22 font-family=%22sans-serif%22 font-size=%2214%22 fill=%22%2378716c%22 text-anchor=%22middle%22>campus2.jpg 파일을 업로드해주세요</text></svg>';" />
+            </div>
+
+            <div class="ministry-main-text">
+              <span class="num-badge">02</span>
+              <h3>비즈니스 선교훈련</h3>
+              <p>
+                캠퍼스 4년, 일터 40년. 대학 시절부터 일터 현장의 사람들을 만나며, 자신의 일과 비즈니스를 통해 하나님 나라의 운동에 참여하도록 훈련합니다.
+              </p>
+            </div>
+
+            <div class="sub-cards">
+              <div class="sub-card">
+                <h4>비즈니스 스터디</h4>
+                <p>
+                  성경적 가치관을 바탕으로 일과 삶을 다시 바라보고, 직장과 일상 속에서 하나님의 부르심에 합당한 삶을 살도록 돕는 훈련입니다. 일, 돈, 리더십, 관계, 비전 등 현실적인 주제들을 통해 자신의 일터를 신앙의 관점으로 연결하도록 돕습니다.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Axis 03 -->
+          <div class="ministry-col">
+            <div class="img-box">
+              <img src="./campus3.jpg" alt="유학생 및 이주민 사역"
+                onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 500%22><rect width=%22800%22 height=%22500%22 fill=%22%23e7e5e4%22/><text x=%22400%22 y=%22245%22 font-family=%22sans-serif%22 font-size=%2220%22 font-weight=%22bold%22 fill=%22%2357534e%22 text-anchor=%22middle%22>03. DIASPORA &amp; FRIEND</text><text x=%22400%22 y=%22275%22 font-family=%22sans-serif%22 font-size=%2214%22 fill=%22%2378716c%22 text-anchor=%22middle%22>사진 준비 중</text></svg>';" />
+            </div>
+
+            <div class="ministry-main-text">
+              <span class="num-badge">03</span>
+              <h3>유학생 &amp; 이주민 사역</h3>
+              <p>
+                한국에서 공부하고 일하는 외국인 청년들에게 먼저 다가가 친구가 됩니다. 비타500 나눔과 식탁 교제로 환대하며 그리스도의 몸 된 공동체로 초대합니다.
+              </p>
+            </div>
+
+            <div class="sub-cards">
+              <div class="sub-card">
+                <h4>이주민 커뮤니티</h4>
+                <p>
+                  이주민 커뮤니티는 한국에서 외롭고 소외된 이주민들에게 먼저 다가가 친구가 되어주고, 사랑과 환대를 통해 예수 그리스도의 몸으로 초대하는 공동체입니다.
+                </p>
+                <p>
+                  우리는 하나님께서 열방을 우리의 이웃으로 보내셨다고 믿으며, 한 사람의 삶을 끝까지 함께 하고 자립과 회복까지 돕는 진정한 친구가 되고자 합니다.
+                </p>
+                <p>
+                  이주민 커뮤니티는 우리에게 다가온 사람들을 환대하고 사랑을 베푸는 친구 공동체입니다.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 03. Together We Journey -->
+    <section id="together">
+      <div class="container">
+        <div class="section-title-wrap">
+          <div class="eyebrow">
+            <span class="eyebrow-line"></span>
+            <span>TOGETHER WE JOURNEY</span>
+          </div>
+          <h2>우리가 함께 하는 것</h2>
+        </div>
+
+        <div class="together-stack">
+          <div class="together-box">
+            <h3>안식 컨퍼런스</h3>
+            <p>
+              원바디 안식 컨퍼런스는 공동체가 일상을 멈추고 하나님이 창조하신 자연 속에서 함께 쉼과 예배, 교제와 축제를 누리며 몸과 마음과 영혼의 회복을 경험하는 3박 4일의 여정입니다.
+            </p>
+            <p>
+              이 컨퍼런스는 안식을 하나님의 선물로 받아들이며 하나님께 순종하는 공동체적 결단 가운데, 서로의 이야기를 나누고 하나님의 뜻을 함께 발견하며 하나님과 공동체와의 친밀함을 깊이 세워가는 시간입니다.
+            </p>
+          </div>
+
+          <div class="together-box">
+            <h3>평화와 화해를 향한 여정</h3>
+            <p>
+              평화와 화해를 향한 여정은 갈등과 분열이 가득한 이 시대에 평화와 화해를 회복하고자 선한 영향력을 끼쳤던 역사적 인물들의 기념관을 탐방하며 사랑과 이해를 배워가는 청년들의 여정입니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04. Support -->
+    <section id="support">
+      <div class="container">
+        <div class="support-box">
+          <div class="support-eyebrow">Onebody Community – Campus Mission</div>
+          <h2>“우리는 대학이 바뀌면, 세상이 바뀐다고 믿습니다.”</h2>
+
+          <div class="support-body">
+            <p>
+              원바디 커뮤니티의 <strong>Campus Mission</strong>은 매주 캠퍼스에서 청년들을 만나 복음을 전하고, 함께 삶을 나누며 예수님의 제자로 세워갑니다. 한 사람을 공동체 안에서 세워 캠퍼스에서 세상으로 보냅니다.
+            </p>
+
+            <div class="support-highlight">
+              <p><strong>1. 캠퍼스 복음화:</strong> 한 사람에게 복음을 전하고 예수님의 제자로 함께 살아갑니다. 각 학과에 기도모임을 세우고 연결하여, 캠퍼스 전체에 복음이 흘러가는 움직임을 만들어갑니다.</p>
+              <p><strong>2. 비즈니스 선교훈련:</strong> 캠퍼스 4년, 일터 40년. 캠퍼스에서부터 실제 일터와 비즈니스 현장의 사람들을 만나며, 자신의 일과 비즈니스를 통해 하나님 나라의 운동에 참여하도록 훈련합니다.</p>
+            </div>
+
+            <p>
+              여러분의 후원은 캠퍼스에서 한 사람을 만나 복음을 전하고, 공동체 안에서 제자로 세워 세상으로 보내는 사역에 사용됩니다.
+            </p>
+
+            <div class="support-call">
+              <p>매월 1만 원으로 함께할 500명의 동역자를 초대합니다.</p>
+              <p>여러분의 동역으로 캠퍼스의 한 사람을 만나고 세상으로 보내는 사역을 계속 이어갈 수 있습니다.</p>
+            </div>
+          </div>
+
+          <a href="https://go.missionfund.org/onebodycampusmission" target="_blank" rel="noopener noreferrer" class="btn-support-full">
+            <span>캠퍼스 미션 후원 동참하기 (미션펀드 링크)</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-brand">ONEBODY</div>
+      <p>서로 사랑함으로 세상 속에 존재하는 안식공동체 • 천안 대학지역</p>
+      <p>© 2026 ONEBODY COMMUNITY &amp; CHURCH. ALL RIGHTS RESERVED.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
